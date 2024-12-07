@@ -6,12 +6,12 @@ import BubbleChart from './components/BubbleChart';
 import './App.css'
 
 function App() {
-  const [chartData, setChartData] = useState(null); // includes Null data until data is fetched
+  const [chartData, setChartData] = useState(null); // includes null data until data is fetched
 
   useEffect(() => {
     fetch('/financial_data.json') //fetch the data from the JSON file
       .then((response) => response.json())
-      .then((data) => setChartData(data)) // changes the data from null to our JSON information
+      .then((data) => setChartData(data)) 
       .catch((error) => ('Error Fetching JSON:', error))
   }, []);
 
@@ -26,7 +26,7 @@ function App() {
       <LineChart chartData={chartData} /> 
       <ScatterChart chartData={chartData} /> 
       <BubbleChart chartData={chartData} /> 
-    </div> //implements the charts from the other jsx files
+    </div> 
   );
 }
 

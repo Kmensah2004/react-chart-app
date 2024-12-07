@@ -9,7 +9,7 @@ const ChartComponent = ({ type, data, options }) => {
     const ctx = chartRef.current?.getContext('2d');
 
     if (chartInstanceRef.current) {
-      chartInstanceRef.current.destroy(); // Destroy any existing chart instance
+      chartInstanceRef.current.destroy(); 
     }
 
     chartInstanceRef.current = new Chart(ctx, {
